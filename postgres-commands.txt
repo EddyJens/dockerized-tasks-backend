@@ -1,0 +1,30 @@
+// creating user and password
+psql -U postgres
+// type the pass
+
+// listing all the databases
+\l
+
+// installing knex globally - may needed in docker compose script
+sudo npm i knex -g
+
+// creating knex configuration file
+knex init
+
+// creating migrations files:
+npx knex migrate:make create_table_users
+npx knex migrate:make create_table_tasks
+
+// connecting to a specific database
+\c tasks
+
+// checking all tables
+\dt
+
+// running migrations:
+npx knex migrate:latest
+
+// running rollback:
+npx knex migrate:rollback
+
+
